@@ -1,3 +1,6 @@
+const express = require("express");
+const app = express();
+
 const io = require("socket.io")(5000, {
   cors: {
     origin: ["*"],
@@ -21,4 +24,8 @@ io.on("connection", (socket) => {
     connectedCounter--;
     io.emit("connectedCounter", connectedCounter);
   });
+});
+
+app.get("/", (req, res) => {
+  res.send("Hello World, from server");
 });
