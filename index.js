@@ -29,3 +29,5 @@ io.on("connection", (socket) => {
 app.get("/", (req, res) => {
   res.send("Hello World, from server");
 });
+
+app.listen(8080, () = > { console.log("Listening on port 8080"); } );
